@@ -1,7 +1,8 @@
 ﻿public var punchAnimation : AnimationClip;
 public var kickAnim : AnimationClip;
 
- var PunchSound: AudioSource; 
+public var PunchSound: AudioSource;
+public var KickSound: AudioSource;  
 
 function Start () {
 	animation[punchAnimation.name].wrapMode = WrapMode.Once;
@@ -13,6 +14,7 @@ function Start () {
 
 	var aSources = GetComponents(AudioSource);
 	PunchSound = aSources[1];
+	KickSound = aSources[2];
 }
 
 var flag;
@@ -28,12 +30,15 @@ function Update () {
 	
 	animation.Play(punchAnimation.name);
 	PunchSound.volume = Random.Range(0.8f, 1);
-	PunchSound.pitch = Random.Range(0.1f, 1.1f);
+	PunchSound.pitch = Random.Range(0.1f, 1.5f);
 	PunchSound.Play();
 	
 	}
 	if(Input.GetMouseButtonDown(1) && !flag) {
 		animation.Play(kickAnim.name);
+		KickSound.volume = Random.Range(0.2f, 0.5f);
+		KickSound.pitch = Random.Range(0.8f, 1.1f);
+		KickSound.Play();
 
 	}
 }
