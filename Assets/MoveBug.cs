@@ -65,4 +65,11 @@ public class MoveBug : MonoBehaviour {
  
          transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y, transform.localPosition.z + z);
      }
+
+     void OnCollisionEnter(Collider collider){
+        Debug.Log("Something hit..");
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+1000, transform.localPosition.z);;
+     }
   }
+
+
