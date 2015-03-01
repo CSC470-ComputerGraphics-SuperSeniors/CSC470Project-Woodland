@@ -1,87 +1,8 @@
 fileFormatVersion: 2
-guid: eaccf093cbe7241438f656af97118327
+guid: 289a07e4a8e20f74b9b20cbf968cf72e
 ModelImporter:
   serializedVersion: 16
-  fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: group2
-    100006: ikHandle1
-    100008: ikHandle2
-    100010: ikHandle3
-    100012: ikHandle4
-    100014: joint1
-    100016: joint10
-    100018: joint11
-    100020: joint12
-    100022: joint13
-    100024: joint14
-    100026: joint15
-    100028: joint16
-    100030: joint17
-    100032: joint18
-    100034: joint19
-    100036: joint2
-    100038: joint20
-    100040: joint21
-    100042: joint22
-    100044: joint23
-    100046: joint24
-    100048: joint3
-    100050: joint4
-    100052: joint5
-    100054: joint6
-    100056: joint7
-    100058: joint8
-    100060: joint9
-    100062: nurbsCircle1
-    100064: pasted__nurbsCircle1
-    100066: pasted__nurbsCircle1 1
-    100068: pasted__nurbsCircle1 2
-    100070: sunDirection
-    100072: //RootNode
-    100074: swarminfector:Object001
-    400000: group
-    400002: group1
-    400004: group2
-    400006: ikHandle1
-    400008: ikHandle2
-    400010: ikHandle3
-    400012: ikHandle4
-    400014: joint1
-    400016: joint10
-    400018: joint11
-    400020: joint12
-    400022: joint13
-    400024: joint14
-    400026: joint15
-    400028: joint16
-    400030: joint17
-    400032: joint18
-    400034: joint19
-    400036: joint2
-    400038: joint20
-    400040: joint21
-    400042: joint22
-    400044: joint23
-    400046: joint24
-    400048: joint3
-    400050: joint4
-    400052: joint5
-    400054: joint6
-    400056: joint7
-    400058: joint8
-    400060: joint9
-    400062: nurbsCircle1
-    400064: pasted__nurbsCircle1
-    400066: pasted__nurbsCircle1 1
-    400068: pasted__nurbsCircle1 2
-    400070: sunDirection
-    400072: //RootNode
-    400074: swarminfector:Object001
-    4300000: swarminfector:Object001
-    9500000: //RootNode
-    13700000: swarminfector:Object001
+  fileIDToRecycleName: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -91,7 +12,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -101,7 +22,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -131,7 +52,7 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: swarminfector:Object001
+    rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   additionalBone: 0
