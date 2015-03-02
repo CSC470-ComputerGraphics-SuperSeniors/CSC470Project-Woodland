@@ -14,9 +14,18 @@ public class MoveBug : MonoBehaviour {
      private float z;
      private float tiempo;
      private float angulo;
+
+    public AudioSource[] aSources;
+    public AudioSource DyingSound;
  
      // Use this for initialization
      void Start () {
+        
+        // sounds effects
+        aSources = GetComponents<AudioSource>();
+        DyingSound = aSources[1];
+
+        PointCounter.totalBugs++;
         
         x = Random.Range(-velocidadMax, velocidadMax);
         z = Random.Range(-velocidadMax, velocidadMax);
@@ -28,6 +37,9 @@ public class MoveBug : MonoBehaviour {
      void Update () {
  
          tiempo += Time.deltaTime;
+
+         xMax += (PointCounter.count / 10);
+         zMax += (PointCounter.count / 10);
  
          if (transform.localPosition.x > xMax) {
              x = Random.Range(-velocidadMax, 0.0f);
@@ -72,6 +84,7 @@ public class MoveBug : MonoBehaviour {
 
 		if(collider.gameObject.tag == "appendages"){
 	        Debug.Log("Something hit..");
+            DyingSound.Play(); 
 			GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy(expl, 3);
 			for(float i = transform.localPosition.y; i < 5; i+=1){
@@ -80,7 +93,8 @@ public class MoveBug : MonoBehaviour {
 			expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy(expl, 3);
 			Destroy(gameObject);
-            PointCounter.count++;     
+            PointCounter.count++; 
+               
 		}
      }
 

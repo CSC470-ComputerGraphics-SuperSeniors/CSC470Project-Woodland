@@ -37,7 +37,7 @@ function Update () {
 	if(Input.GetMouseButtonDown(1) && !flag) {
 		animation.Play(kickAnim.name);
 		KickSound.volume = Random.Range(0.2f, 0.5f);
-		KickSound.pitch = Random.Range(0.8f, 1.1f);
+		KickSound.pitch = Random.Range(0.8f, 1.0f);
 		KickSound.Play();
 
 	}
