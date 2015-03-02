@@ -7,7 +7,8 @@ public class MoveBug : MonoBehaviour {
      public float xMax;
      public float zMax;
      public float xMin;
-     public float zMin;
+		public float zMin;
+	public GameObject explosion;
          
      private float x;
      private float z;
@@ -66,9 +67,18 @@ public class MoveBug : MonoBehaviour {
          transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y, transform.localPosition.z + z);
      }
 
-     void OnCollisionEnter(Collider collider){
-        Debug.Log("Something hit..");
-        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+1000, transform.localPosition.z);;
+     void OnTriggerEnter(Collider collider){
+		if(collider.gameObject.tag == "appendages"){
+	        Debug.Log("Something hit..");
+			GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
+			Destroy(expl, 3);
+			for(float i = transform.localPosition.y; i < 5; i+=1){
+				transform.localPosition = new Vector3(transform.localPosition.x,i,transform.localPosition.z);
+			};
+			expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
+			Destroy(expl, 3);
+			Destroy(gameObject);
+		}
      }
   }
 

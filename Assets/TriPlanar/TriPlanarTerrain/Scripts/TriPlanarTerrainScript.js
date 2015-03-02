@@ -27,6 +27,9 @@ function setTerrainValues () {
 	if ( terDat != null ) {
 		var splatLength : int = terDat.splatPrototypes.length;
 		for ( var i : int = 0; i < splatLength-1; i++ ) {
+			if(i >= 8){
+				break;
+			}
 			if ( bumpTextures[i] != null ) {
 				Shader.SetGlobalTexture ( "_BumpMap" + i, bumpTextures[i] );
 			}

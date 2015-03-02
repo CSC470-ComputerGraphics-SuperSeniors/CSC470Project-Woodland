@@ -35,6 +35,7 @@ class TriPlanarTerrainScriptEditor extends Editor {
 			}
 			for ( var i : int = 0; i < terDat.splatPrototypes.length; i++ ) {
 				EditorGUI.indentLevel = 0;
+				if(i >= showTextures.length){break;}
 				showTextures[i] = EditorGUILayout.Foldout(showTextures[i], "Layer " + i + " (" + terDat.splatPrototypes[i].texture.name + ")" );
 				if ( showTextures[i] ) {
 					EditorGUI.indentLevel = 1;
