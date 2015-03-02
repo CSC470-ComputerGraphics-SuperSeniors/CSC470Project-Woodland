@@ -2,7 +2,7 @@
 public var kickAnim : AnimationClip;
 
 public var PunchSound: AudioSource;
-public var KickSound: AudioSource;  
+public var KickSound: AudioSource;
 
 function Start () {
 	animation[punchAnimation.name].wrapMode = WrapMode.Once;
@@ -15,6 +15,7 @@ function Start () {
 	var aSources = GetComponents(AudioSource);
 	PunchSound = aSources[1];
 	KickSound = aSources[2];
+
 }
 
 var flag;

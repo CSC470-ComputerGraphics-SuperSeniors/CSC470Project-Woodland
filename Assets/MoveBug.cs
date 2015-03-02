@@ -83,8 +83,9 @@ public class MoveBug : MonoBehaviour {
      void OnTriggerEnter(Collider collider){
 
 		if(collider.gameObject.tag == "appendages"){
-	        Debug.Log("Something hit..");
-            DyingSound.Play(); 
+	        //Debug.Log("Something hit..");
+            PointCounter.count++;
+            DyingSound.Play();
 			GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy(expl, 3);
 			for(float i = transform.localPosition.y; i < 5; i+=1){
@@ -93,7 +94,7 @@ public class MoveBug : MonoBehaviour {
 			expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy(expl, 3);
 			Destroy(gameObject);
-            PointCounter.count++; 
+            
                
 		}
      }
