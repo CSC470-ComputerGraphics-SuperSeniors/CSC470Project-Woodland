@@ -4,10 +4,10 @@ using System.Collections;
 public class MoveBug : MonoBehaviour {
 
 	public float velocidadMax;  
-     public float xMax;
-     public float zMax;
-     public float xMin;
-		public float zMin;
+    public float xMax;
+    public float zMax;
+    public float xMin;
+	public float zMin;
 	public GameObject explosion;
          
      private float x;
@@ -17,12 +17,11 @@ public class MoveBug : MonoBehaviour {
  
      // Use this for initialization
      void Start () {
- 
- 
-         x = Random.Range(-velocidadMax, velocidadMax);
-         z = Random.Range(-velocidadMax, velocidadMax);
-         angulo = Mathf.Atan2(x, z) * (180 / 3.141592f) + 90;
-         transform.localRotation = Quaternion.Euler( 0, angulo, 0);
+        
+        x = Random.Range(-velocidadMax, velocidadMax);
+        z = Random.Range(-velocidadMax, velocidadMax);
+        angulo = Mathf.Atan2(x, z) * (180 / 3.141592f) + 90;
+        transform.localRotation = Quaternion.Euler( 0, angulo, 0);
      }
      
      // Update is called once per frame
@@ -65,9 +64,12 @@ public class MoveBug : MonoBehaviour {
          }
  
          transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y, transform.localPosition.z + z);
+         
+        
      }
 
      void OnTriggerEnter(Collider collider){
+
 		if(collider.gameObject.tag == "appendages"){
 	        Debug.Log("Something hit..");
 			GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
@@ -78,8 +80,10 @@ public class MoveBug : MonoBehaviour {
 			expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy(expl, 3);
 			Destroy(gameObject);
+            PointCounter.count++;     
 		}
      }
+
   }
 
 
