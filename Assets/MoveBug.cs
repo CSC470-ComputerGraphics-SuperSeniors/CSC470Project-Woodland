@@ -15,15 +15,18 @@ public class MoveBug : MonoBehaviour {
      private float tiempo;
      private float angulo;
 
-    public AudioSource[] aSources;
+    //public AudioSource[] aSources;
     public AudioSource DyingSound;
+    public AudioSource KillStreakFive;
+    public AudioSource KillStreakTen;
+    public AudioSource KillStreakFifteen;
+    public AudioSource KillStreakTwenty;
+    public AudioSource KillStreakTwentyFive;
+    public AudioSource KillStreakThirty;
+    public AudioSource fiveKillMusic;
  
      // Use this for initialization
      void Start () {
-        
-        // sounds effects
-        aSources = GetComponents<AudioSource>();
-        DyingSound = aSources[1];
 
         PointCounter.totalBugs++;
         
@@ -81,19 +84,42 @@ public class MoveBug : MonoBehaviour {
      }
 
      void OnTriggerEnter(Collider collider){
-
 		if(collider.gameObject.tag == "appendages"){
-	        //Debug.Log("Something hit..");
             PointCounter.count++;
-            DyingSound.Play();
+            if(PointCounter.count % 5 == 0 && !fiveKillMusic.isPlaying)
+                fiveKillMusic.Play();
+            switch(PointCounter.count){
+                case 5:
+                    KillStreakFive.Play();
+                    break;
+                case 10:
+                    KillStreakTen.Play();
+                    break;
+                case 15:
+                    KillStreakFifteen.Play();
+                    break;
+                case 20:
+                    KillStreakTwenty.Play();
+                    break;
+                case 25:
+                    KillStreakTwentyFive.Play();
+                    break;
+                case 30:
+                    KillStreakThirty.Play();
+                    break;
+                default:
+                    break;
+            }
 			GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy(expl, 3);
-			for(float i = transform.localPosition.y; i < 5; i+=1){
+			for(float i = transform.localPosition.y; i < 10; i+=1){
 				transform.localPosition = new Vector3(transform.localPosition.x,i,transform.localPosition.z);
 			};
 			expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy(expl, 3);
+            DyingSound.Play();
 			Destroy(gameObject);
+            
             
                
 		}

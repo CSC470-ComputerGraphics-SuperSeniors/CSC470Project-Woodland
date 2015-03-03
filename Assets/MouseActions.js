@@ -30,8 +30,8 @@ function Update () {
 
 	
 	animation.Play(punchAnimation.name);
-	PunchSound.volume = Random.Range(0.8f, 1);
-	PunchSound.pitch = Random.Range(0.8f, 1.5f);
+	PunchSound.volume = Random.Range(0.8f, 1.0f);
+	PunchSound.pitch = Random.Range(0.8f, 1.1f);
 	PunchSound.Play();
 	
 	}

@@ -4,6 +4,7 @@ using System.Collections;
 public class Footsteps : MonoBehaviour {
 
 	CharacterController cc;
+	public AudioSource FootSteps;
 
 	void Start()
 	{
@@ -15,9 +16,9 @@ public class Footsteps : MonoBehaviour {
 	{
 		if(cc.isGrounded == true && cc.velocity.magnitude > 1f && audio.isPlaying == false)
 		{	
-			audio.volume = Random.Range(0.8f, 1);
-			audio.pitch = Random.Range(0.8f, 1.1f);
-			audio.Play();
+			FootSteps.volume = Random.Range(0.8f, 1.0f);
+			FootSteps.pitch = Random.Range(0.9f, 1.0f);
+			FootSteps.Play();
 
 		}
 	}

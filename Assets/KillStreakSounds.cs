@@ -10,9 +10,5 @@ public class KillStreakSounds : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(PointCounter.count == 1){
-		 	audio.Play();
-		}
-	
 	}
 }

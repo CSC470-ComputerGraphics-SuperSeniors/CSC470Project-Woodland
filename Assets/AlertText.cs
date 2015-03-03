@@ -5,15 +5,15 @@ public class AlertText : MonoBehaviour {
 	private bool fiveCount = false;
 	private bool tenCount = false;
 	private bool fifteenCount = false;
+	private bool twentyCount = false;
 	private bool twentyFiveCount = false;
-	private bool fourtyFiveCount = false;
-	public AudioClip killStreak1;
+	private bool thirtyCount = false;
 
 	// Use this for initialization
 	void Start () {
 
 	}
-	
+
 	// Update is called once per frame
 	void Update()
 	{	
@@ -21,8 +21,8 @@ public class AlertText : MonoBehaviour {
 		if(PointCounter.count == 0){
 			guiText.text = "";
 		}	
-		if(PointCounter.count == 1 && !fiveCount){
-			StartCoroutine(ShowMessage(2, PointCounter.count, " Kill!"));
+		if(PointCounter.count == 5 && !fiveCount){
+			StartCoroutine(ShowMessage(2, PointCounter.count, " Kills!"));
 			fiveCount = true;
 		}
 		if(PointCounter.count == 10 && !tenCount){
@@ -33,13 +33,17 @@ public class AlertText : MonoBehaviour {
 			StartCoroutine(ShowMessage(2, PointCounter.count, " Kills!"));
 			fifteenCount = true;
 		}
+		if(PointCounter.count == 20 && !twentyCount){
+			StartCoroutine(ShowMessage(2, PointCounter.count, " Kills!"));
+			twentyCount = true;
+		}
 		if(PointCounter.count == 25 && !twentyFiveCount){
 			StartCoroutine(ShowMessage(2, PointCounter.count, " Kills!"));
 			twentyFiveCount = true;
 		}
-		if(PointCounter.count == 45 && !fourtyFiveCount){
+		if(PointCounter.count == 30 && !thirtyCount){
 			StartCoroutine(ShowMessage(2, PointCounter.count, " Kills!"));
-			fourtyFiveCount = true;
+			thirtyCount = true;
 		}
 	}
 
